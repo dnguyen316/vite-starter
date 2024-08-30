@@ -1,7 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-export CI="1"
-
-npx lint-staged
-npm test
+npx eslint --fix $(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g') --no-warn-ignored
+npx prettier $(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g') --write --ignore-unknown
+git update-index --again

@@ -1,6 +1,6 @@
 {
-  "name": "Vite Starter",
-  "short_name": "Vite Starter",
+  "name": "An Example Application",
+  "short_name": "Example",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
