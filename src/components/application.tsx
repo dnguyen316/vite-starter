@@ -8,6 +8,8 @@ import Morduk from '../characters/morduk.json';
 import { Character } from '../characters/generate-character';
 import { initializeCounter } from '../counter.js';
 
+import { Button, Input } from 'vite-components';
+
 const Application = () => {
   const memoAddBanner = useCallback((text: string) => {
     addBanner(text);
@@ -34,6 +36,9 @@ const Application = () => {
       <h2 id="count"></h2>
       <button id="increment">+</button>
       <button id="decrement">-</button>
+
+      <Button>My Lib</Button>
+      <Input />
     </main>
   );
 };
