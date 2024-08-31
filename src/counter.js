@@ -1,4 +1,4 @@
-export const initializeCounter = (doc = globalThis.document) => {
+export const initializeCounter = (doc = globalThis.document, isMounted) => {
   const countElement = doc.getElementById('count');
   const incrementButton = doc.getElementById('increment');
   const decrementButton = doc.getElementById('decrement');
@@ -7,7 +7,7 @@ export const initializeCounter = (doc = globalThis.document) => {
 
   const render = () => {
     countElement.textContent = count;
-    if (count < 0) {
+    if (count < 0 && !isMounted) {
       import('./add-banner').then(({ addBanner }) => {
         addBanner('banner');
       });
